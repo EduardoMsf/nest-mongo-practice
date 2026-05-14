@@ -23,5 +23,6 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/public ./public
 
 CMD [ "node","dist/main" ]
