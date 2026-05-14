@@ -31,7 +31,7 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/pokedex:latest
-            ${{ secrets.DOCKER_USERNAME }}/pokedex:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/pokedex:${{ github.ref_name }}-${{ github.run_number }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
